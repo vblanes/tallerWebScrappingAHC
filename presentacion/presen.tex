@@ -7,6 +7,7 @@
 \usetheme{Warsaw}
 \usecolortheme{crane}
 
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
 
 \title{Taller Web Scrapping con Python}
 \subtitle{ÀREA HACKERS CÍVICS}
@@ -41,9 +42,8 @@
 		\begin{itemize}
 			\item Utilizaremos la librería \textbf{urllib} para conectarnos a una dirección de Internet y obtener su contenido.
 			\item Después utilizaremos \textbf{beautifulsoup4} para \textit{parsear} el contenido y poder extraer información de forma
-			sencilla
-			\item También utilizaremos la biblioteca \textbf{iPython} para trabajar con notebooks, que nos permite ejecutar fragmentos de 
-			código de forma independiente y resulta mucho más interactivo.(?)
+			sencilla.
+			\item También utilizaremos la biblioteca \textbf{iPython} para trabajar con notebooks, que nos permiten ejecutar fragmentos de código de forma independiente y resultan mucho más interactivos.(?)
 		\end{itemize}
 	\end{frame}
 	%tercera traspa
@@ -56,7 +56,7 @@
 					\item Su instalación es muy sencilla. Podéis encontrarla en \textbf{\url{https://www.continuum.io/downloads}}.
 					\item Además posee su propio gestor de paquetes. Si te falta alguna librería puedes usar \textbf{conda install} 
 					y el nombre de esta.
-					\item Para el uso de los \textit{notebooks} tenemos que ejecutar \textbf{conda install ipython}
+					\item Para el uso de los \textit{notebooks} tenemos que ejecutar \textbf{conda install ipython}.
 				\end{itemize}
 			\end{column}
 			
@@ -65,6 +65,36 @@
 			\end{column}
 		\end{columns}
 	\end{frame}
+	%cuarta traspa
+	\begin{frame}{Material adicional}
+		Junto a esta breve presentación y los notebooks que vamos a utilizar encontraréis también un anexo explicativo
+		donde muestran algunas de las funciones python más importantes que usaremos durante el taller. Podéis descargar
+		los ficheros del repositorio \textbf{\url{https://github.com/vblanes/tallerWebScrappingAHC}}.
+	\end{frame}
+	%quinta traspa
+	\begin{frame}{Muchas opciones}
+		\begin{itemize}
+			\item Para este taller usaremos \textbf{urllib} y \textbf{beautifulsoup4} pero existen 
+			más alternativas cuando hablamos de descargar el contenido de una web y tratarlo para conseguir 
+			la información deseada.
+			\item Python dispone de herramientas para hacer Web Scrapping a una escala más grande. Por ejemplo la librería 
+			\textbf{scrappy} nos permite construir una \textit{araña} para ir explorando los enlaces de la web, como si recorriéramos un grafo.
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Contacto}
+		\begin{itemize}
+			\item 	\includegraphics[scale=0.025]{telegram.png} \tab{\textbf{\url{https://t.me/vblanes}}}
+			\item 	\includegraphics[scale=0.05]{email.png} \tab{\textbf{\url{viblasel@gmail.com}}}
+			\item 	\includegraphics[scale=0.05]{facebook.png} \tab{\textbf{\url{https://www.facebook.com/viblasel}}}
+		\end{itemize}
+	\end{frame}
+
+
+
+
+
+
 
 
 \end{document}
