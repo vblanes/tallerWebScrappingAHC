@@ -1,0 +1,70 @@
+%presentacion
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+%tema de las trapas
+\usetheme{Warsaw}
+\usecolortheme{crane}
+
+
+\title{Taller Web Scrapping con Python}
+\subtitle{ÀREA HACKERS CÍVICS}
+\author{Vicent Blanes}
+\date{01/05/2017}
+%comienzo documento
+\begin{document}
+	%empezamos con el primer frame
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	%primera traspa
+	\begin{frame}{¿Por qué Python?}
+		\begin{columns}[T]
+			\begin{column}[T]{8cm} 
+				%lista de puntos
+				\begin{itemize}  
+					\item Python es un lenguaje \textbf{interpretado} y con una gran expresividad.
+					\item Dispone de librerías potentes que nos ahorran mucho trabajo.
+					\item Además es muy limpio y fácil de leer, un lenguaje ideal para aprender a programar.
+				\end{itemize}
+			\end{column}
+		
+			\begin{column}[T]{5cm}
+				\includegraphics[height=3cm]{python.png}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	%segunda traspa
+	\begin{frame}{Herramientas para Web Scrapping}
+		\begin{itemize}
+			\item Utilizaremos la librería \textbf{urllib} para conectarnos a una dirección de Internet y obtener su contenido.
+			\item Después utilizaremos \textbf{beautifulsoup4} para \textit{parsear} el contenido y poder extraer información de forma
+			sencilla
+			\item También utilizaremos la biblioteca \textbf{iPython} para trabajar con notebooks, que nos permite ejecutar fragmentos de 
+			código de forma independiente y resulta mucho más interactivo.(?)
+		\end{itemize}
+	\end{frame}
+	%tercera traspa
+	\begin{frame}{Anaconda}
+		\begin{columns}[T]
+			\begin{column}[T]{8cm} 
+				%lista de puntos
+				\begin{itemize}  
+					\item Anaconda es una distribución de python que tiene pre-instaladas montones de librerías útiles 
+					\item Su instalación es muy sencilla. Podéis encontrarla en \textbf{\url{https://www.continuum.io/downloads}}.
+					\item Además posee su propio gestor de paquetes. Si te falta alguna librería puedes usar \textbf{conda install} 
+					y el nombre de esta.
+					\item Para el uso de los \textit{notebooks} tenemos que ejecutar \textbf{conda install ipython}
+				\end{itemize}
+			\end{column}
+			
+			\begin{column}[T]{5cm}
+				\includegraphics[height=2cm]{anaconda.png}
+			\end{column}
+		\end{columns}
+	\end{frame}
+
+
+\end{document}
