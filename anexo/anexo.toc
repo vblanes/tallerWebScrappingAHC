@@ -1,0 +1,12 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Estructuras}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Estructuras de datos}{3}{subsection.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}Listas}{3}{subsubsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}Diccionarios}{4}{subsubsection.1.1.2}
+\contentsline {subsection}{\numberline {1.2}Estructuras de control}{4}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Condicional: if}{4}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}Bucle: for}{5}{subsubsection.1.2.2}
+\contentsline {section}{\numberline {2}Funciones python}{5}{section.2}
+\contentsline {section}{\numberline {3}Funciones de urllib}{6}{section.3}
+\contentsline {section}{\numberline {4}Funciones de beautifulsoup4}{6}{section.4}
+\contentsline {section}{\numberline {5}Para m\IeC {\'a}s informaci\IeC {\'o}n...}{7}{section.5}

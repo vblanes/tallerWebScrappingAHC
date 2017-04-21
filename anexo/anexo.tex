@@ -1,0 +1,171 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage{ragged2e} % Para justificar texto
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage[autostyle]{csquotes}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage[colorlinks = true,
+linkcolor = black,
+urlcolor  = blue,
+citecolor = blue,
+anchorcolor = black]{hyperref}
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\title{Anexo funciones Python - Taller de Web Scrapping}
+\date{20/02/2017}
+\author{Vicent Blanes Selva}
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{Estructuras}
+\justify
+En esta sección haremos un recordatorio/pequeña introducción de la sintaxis 
+en Python. Si estás familiarizado con otros lenguajes de programación como C, Java, JavaScript o R 
+puedes leerla por encima para no cometer errores de sintácticos. Si no estás familiarizado con la programación
+te recomendamos que le eches un buen ojo ;)\\\\
+Enlace directo a la documentación \textbf{\url{https://docs.python.org/3.6/tutorial/datastructures.html}}
+	\subsection{Estructuras de datos}
+		\subsubsection{Listas}
+			\justify
+			Una lista es una estructura muy sencilla que consiste en una colección
+			de elementos almacenados de forma consecutiva. A diferencia de lo que ocurre en otros lenguajes
+			python puede contener elementos de distintos tipos. Se puede definir una lista vacía o 
+			con algunos objetos ya en su interior. 
+			\lstinputlisting[language=python, firstline=1, lastline=9]{minicodigos/lista.py}
+			\justify
+			La forma más sencilla de recuperar un elemento de la lista es referirse a él mediante
+			el nombre de la lista y el índice que ocupa entre corchetes. \textbf{IMPORTANTE:} en python 
+			el primer indice de una lista es el 0.
+			\lstinputlisting[language=python, firstline=11, lastline=15]{minicodigos/lista.py}
+			\justify
+			También poseemos dos método para insertar elementos en una lista, \textbf{append e insert}.
+			\lstinputlisting[language=python, firstline=18, lastline=26]{minicodigos/lista.py}
+			\justify
+			Y entre otros, un par de método para borrar los elementos de una lista. Se recomienda
+			revisar la documentación (enlace al principio de la sección).
+			\lstinputlisting[language=python, firstline=28]{minicodigos/lista.py}
+		\subsubsection{Diccionarios}
+			\justify
+			Los diccionarios son estructuras de datos similares a las listas, sólo que en estos se guardan pares clave-valor. 
+			Cada una de las entradas debe poseer una clave única, pudiendo repetirse su valor. También son conocidos como 
+			\textbf{Maps} o con implementaciones concretas como \textbf{tablas hash}. 
+			Poseemos métodos para insertar, borrar y consultar las información de los diccionarios. Lo vemos con un ejemplo:
+			\lstinputlisting[language=python, lastline=17]{minicodigos/diccionario.py}
+			\justify
+			Tenemos también método para recuperar en forma de lista las clave y los valores. 
+			Debemos destacar que al contrario de las listas, los diccionarios en python no tienen un orden y por tanto cada vez que
+			recuperemos las claves y/o los valores van a tener un orden arbitrario que nada tiene que ver con el orden de inserción.
+			\lstinputlisting[language=python, firstline=20]{minicodigos/diccionario.py}
+		
+	\subsection{Estructuras de control}  
+		\subsubsection{Condicional: if}
+		\justify
+		La clausula if, seguida de una condición que se evalúa a verdadero o falso y dos puntos, dan paso a un bloque de código
+		que sólo se ejecutará si la mencionada condición es verdadera. La mejor forma de verlo es con un ejemplo:
+		\lstinputlisting[language=python]{minicodigos/ejemploif.py}
+		\justify
+		\textit{Nota: los bloques de código en python están marcados por la identación. \textbf{El estándar son 4 espacios} así 
+		que se recomienda configurar tu editor favorito para que sustituya la inserción de tabuladores por la de 4 espacios}.
+		\subsubsection{Bucle: for}
+		\justify
+		Al igual que los condicionales, los bucles son un parte muy importante de la programación ya que permiten
+		realizar un conjunto de acciones varias veces sin tener que repetir el código. Los usaremos principalmente para recorrer 
+		elementos de una lista y poder ejecutar acciones sobre ellos. Los bucles for en python son algo distintos a los 
+		bucles de otros lenguajes más clásicos. De hecho serían el equivalente a un bucle \textbf{for each} tradicional.
+		\lstinputlisting[language=python]{minicodigos/ejemplofor.py}
+	 
+\section{Funciones python}
+	\justify
+	En este apartado veremos algunas funciones útiles que posee 
+	python en una distribución sin librerías externas y que nos ayudarán
+	a desarrollar nuestro código.
+	\begin{itemize}
+		\item \textbf{print}: Función que imprime por la salida estándar.
+		\item \textbf{str(obj)/int(obj)/float(obj)}: Devuelve, si es posible, el objeto transformado en cadena de 
+		texto, entero o número de coma flotante dependiendo de la función utilizada. Puede producir error.
+		\item \textbf{len(obj)} Devuelve la longuitud de una colección, como el tamaño de una lista o el número 
+		de clave de un diccionario. Produce error si se aplica sobre variables simples como un número o un literal.
+		\item \textbf{range(numero)}: Devuelve una secuencia de números enteros desde 0 hasta el número especificado
+		sin incluirlo (Intervalo abierto por la derecha). Se pueden añadir más argumentos, como el número de inicio 
+		o el tamaño del paso.\\
+		\begin{itemize}
+			\item range(4) devuelve [0,1,2,3]
+			\item range(2,4) devuelve [2,3]
+			\item range(1,4,2) devuelve [1,3] \#de uno hasta 4 yendo de 2 en 2
+		\end{itemize}
+	\end{itemize}
+\section{Funciones de urllib}
+	\justify
+	La librería urllib es un conjunto de paquetes diseñados para hacer más fácil las interacciones a partir de peticiones web.
+	Nos vamos a centrar en \textbf{urllib.request} pero es una librería muy útil y recomendamos revisar su documentación (
+	\textbf{\url{https://docs.python.org/3/library/urllib.html}}). Podemos ver que se ofrecen montones de funciones para
+	realizar peticiones web de modo muy avanzado, su exploración concreta queda fuera del taller pues nosotros únicamente
+	centraremos en aquellas que nos permitan hacer un \textit{scrapeado} eficiente sin entrar en temas de \textit{proxies} o identificación.
+	\begin{itemize} 
+		\item \textbf{urlopen(url)} se trata de una función para establecer conexión con un sitio web, se pueden
+		especificar algunos argumentos opcionales más pero en nuestro caso sólo la usaremos con la página web 
+		a la que deseemos conectar.
+		\item Sobre el objeto retornado por la función anterior se puede aplicar la función \textbf{read()} que 
+		nos devuelve el contenido web de la página a la que hayamos realizado la petición como una única cadena de
+		texto.
+	\end{itemize}
+	
+\section{Funciones de beautifulsoup4}
+	\justify
+	BeautifulSoup es una librería que permite tratar documentos html de cualquier tamaño para poder
+	hacerlo más legible o realizar consultas como por ejemplo, obtener el primer texto que esté entre las etiquetas $<p>.$
+	Aquí puedes encontrar su documentación con numerosos ejemplos: \textbf{\url{https://www.crummy.com/software/BeautifulSoup/bs4/doc/}}
+	\begin{itemize}
+		\item \textbf{BeautifulSoup(cadenahtml, 'lxml')} esta es la función principal que transforma una cadena de texto
+		con información html en un objeto del tipo BeautifulSoup que representa información anidada y posee varios métodos
+		para tratar la información.
+	\end{itemize}
+	
+\section{Para más información...}
+\justify 
+Este pequeño anexo no es más que una ayuda para entender algunos de los muchos elementos 
+del lenguaje que vamos a usar en este taller,
+si se quiere aprender más en profundidad recomendamos acudir a fuentes bibliográficas. 
+Nos gustaría recomendar el libro \textbf{Python para todos}, que a pesar de estar enfocado a Python 2.7 
+es libre y muy didáctico. Se puede descargar en este enlance: \textbf{\url{https://launchpadlibrarian.net/18980633/Python\%20para\%20todos.pdf}}
+
+
+
+%\lstinputlisting[language=R]{graficas.R}
+%\includegraphics[scale=0.4]{angulo_vicent_eje_electrico}
+
+\end{document}
